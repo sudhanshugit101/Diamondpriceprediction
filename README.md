@@ -1,6 +1,6 @@
 ## Diamond Price Prediction.
 ### Project Description:
-The goal of this project is to predict the price of a diamond based on its features. The dataset used for this project is the Diamonds dataset from Kaggle. The dataset contains 53940 rows and 11 columns. The dataset contains the following columns: carat, cut, color, clarity, depth, table, price, x, y, z. The dataset is a regression problem. The target variable is the price of the diamond.
+The goal of this project is to predict the price of a diamond based on its features. The dataset used for this project is the Diamonds dataset from Kaggle. The dataset contains 193572 rows and 11 columns. The dataset contains the following columns: carat, cut, color, clarity, depth, table, price, x, y, z. The dataset is a regression problem. The target variable is the price of the diamond.
 
 ### Technologies Used:
 * Python
@@ -11,24 +11,35 @@ The goal of this project is to predict the price of a diamond based on its featu
 * Scikit-learn
 * Jupyter Notebook
 
-### Features:
-* carat: weight of the diamond (0.2--5.01)
-* cut: quality of the cut (Fair, Good, Very Good, Premium, Ideal)
-* color: diamond colour, from J (worst) to D (best)
-* clarity: a measurement of how clear the diamond is (I1 (worst), SI2, SI1, VS2, VS1, VVS2, VVS1, IF (best))
-* depth: total depth percentage = z / mean(x, y) = 2 * z / (x + y) (43--79)
-* table: width of top of diamond relative to widest point (43--95)
-* price: price in US dollars (\$326--\$18,823)
-* x: length in mm (0--10.74)
-* y: width in mm (0--58.9)
-* z: depth in mm (0--31.8)
+### Introduction About the Data :
+
+**The dataset** The goal is to predict `price` of given a diamond.
+
+There are 10 independent variables (including `id`):
+
+* `id` : unique identifier of each diamond
+* `carat` : Carat (ct.) refers to the unique unit of weight measurement used exclusively to weigh gemstones and diamonds.
+* `cut` : Quality of Diamond Cut
+* `color` : Color of Diamond
+* `clarity` : Diamond clarity is a measure of the purity and rarity of the stone, graded by the visibility of these characteristics under 10-power magnification.
+* `depth` : The depth of diamond is its height (in millimeters) measured from the culet (bottom tip) to the table (flat, top surface)
+* `table` : A diamond's table is the facet which can be seen when the stone is viewed face up.
+* `x` : Diamond X dimension
+* `y` : Diamond Y dimension
+* `x` : Diamond Z dimension
+
+Target variable:
+* `price`: Price of the given Diamond.
+
+Dataset Source Link :
+[https://www.kaggle.com/competitions/playground-series-s3e8/data?select=train.csv](https://www.kaggle.com/competitions/playground-series-s3e8/data?select=train.csv)
 
 ### Getting Started:
 Clone this repository to your local machine.
 ```bash
 git clone
 ```
-Once downloaded, activate your virtual environment and run by _____________
+Once downloaded, activate your virtual environment and run by :
 ```bash
 python setup.py
 ```
