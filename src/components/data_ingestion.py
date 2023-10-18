@@ -7,6 +7,12 @@ from dataclasses import dataclass
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
+from src.components.data_transformation import DataTransformation
+from src.components.data_transformation import DataTransformationConfig
+
+from src.components.model_trainer import ModelTrainer
+from src.components.model_trainer import ModelTrainerConfig
+
 # initialize the Data Ingestion Configuration
 
 @dataclass
@@ -44,4 +50,15 @@ class DataIngestion:
 
         except Exception as e:
             logging.error("Data Ingestion Failed")
-            raise CustomException("Data Ingestion Failed", e)
+            raise CustomException("Data Ingestion Failed")
+        
+
+if __name__=="__main__":
+    obj_ingestion=DataIngestion()
+    train_data_path, test_data_path=obj_ingestion.initialize_data_ingestion()
+
+    obj_transformation=DataTransformation()
+    train_data, test_data, _=obj_transformation.initialize_data_transformation(train_data_path, test_data_path)
+
+    obj_trainer=ModelTrainer()
+    print(obj_trainer.initialize_model_training(train_data, test_data))
