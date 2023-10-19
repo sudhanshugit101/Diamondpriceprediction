@@ -42,7 +42,31 @@ class ModelTrainer:
                 "KNeighborsRegressor": KNeighborsRegressor()
             }
 
-            model_report: dict=evaluate_model(X_train, y_train=y_train, X_test=X_test, y_test=y_test, models=models)
+            params={
+                "LinearRegression":{},
+                "Ridge": {},
+                "Lasso": {},
+                "ElasticNet": {},
+                "RandomForestRegressor":{
+                    # 'criterion':['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
+                    # 'max_features':['sqrt','log2',None],
+                    'n_estimators': [8,16,32,64,128,256]
+                },
+                "GradientBoostingRegressor":{
+                    # 'loss':['squared_error', 'huber', 'absolute_error', 'quantile'],
+                    'learning_rate':[.1,.01,.05,.001],
+                    'subsample':[0.6,0.7,0.75,0.8,0.85,0.9],
+                    # 'criterion':['squared_error', 'friedman_mse'],
+                    # 'max_features':['auto','sqrt','log2'],
+                    'n_estimators': [8,16,32,64,128,256]
+                },
+                "KNeighborsRegressor":{
+                    'n_neighbors':[2,3,4,5,6,7,8,9,10],
+                    'weights':['uniform','distance'],
+                    'algorithm':['auto','ball_tree','kd_tree','brute']
+                }
+            }
+            model_report: dict=evaluate_model(X_train, y_train=y_train, X_test=X_test, y_test=y_test, models=models, params=params)
 
             best_model_name = max(model_report, key=lambda x: model_report[x]['r2_score'])
 
