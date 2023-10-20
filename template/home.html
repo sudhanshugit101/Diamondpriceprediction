@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diamond Price Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        label, input {
+            margin: 0.5rem;
+            flex: 1;
+        }
+
+        button {
+            margin: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        #result {
+            text-align: center;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Diamond Price Prediction</h1>
+    </header>
+    <div class="container">
+        <form id="diamondForm">
+            <label for="carat">Carat Weight:</label>
+            <input type="number" id="carat" step="0.01" required>
+
+            <label for="cut">Cut:</label>
+            <select id="cut" required>
+                <option value="Ideal">Ideal</option>
+                <option value="Premium">Premium</option>
+                <option value="Very Good">Very Good</option>
+                <option value="Good">Good</option>
+                <option value="Fair">Fair</option>
+            </select>
+
+            <label for="color">Color:</label>
+            <select id="color" required>
+                <option value="D">D (Colorless)</option>
+                <option value="E">E</option>
+                <option value="F">F</option>
+                <!-- Add more color options -->
+
+            </select>
+
+            <label for="clarity">Clarity:</label>
+            <select id="clarity" required>
+                <option value="IF">IF (Internally Flawless)</option>
+                <option value="VVS1">VVS1</option>
+                <option value="VVS2">VVS2</option>
+                <!-- Add more clarity options -->
+            </select>
+
+            <button type="submit">Predict Price</button>
+        </form>
+
+        <div id="result">
+            <!-- Predicted price will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        // You can add JavaScript for handling the form submission and displaying the result here
+        const form = document.getElementById("diamondForm");
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            // Handle the form submission and prediction here
+            // You'll need to use JavaScript and possibly an API for the prediction
+            // Update the result element with the predicted price
+        });
+    </script>
+</body>
+</html>
